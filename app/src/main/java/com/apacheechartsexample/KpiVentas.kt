@@ -19,6 +19,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.font.FontWeight.Companion.W700
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -26,7 +29,7 @@ import androidx.compose.ui.unit.sp
 @Composable
 public fun kpiVentas(){
     Card(
-        shape = RoundedCornerShape(16.dp),
+        shape = RoundedCornerShape(4.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
         modifier = Modifier
             .padding(5.dp)
@@ -35,7 +38,7 @@ public fun kpiVentas(){
     ) {
         //Painter para imagen
         val painter = painterResource(id = R.drawable.arrow_circle_up)
-        Column (modifier = Modifier.fillMaxWidth()){
+        Column (modifier = Modifier.fillMaxWidth().background(Color.White)){
             Row(
                 modifier = Modifier.fillMaxWidth().padding(12.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -45,13 +48,15 @@ public fun kpiVentas(){
                     text = "Total de ventas",
                     color = Color(0xFFF37920),
                     fontSize = 18.sp,
+                    style = TextStyle(fontWeight = FontWeight.SemiBold)
                 )
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Image(painter = painter, contentDescription = "flecha arriba")
                     Text(
                         text = "% 15",
                         color = Color(0xFF34964F),
-                        fontSize = 26.sp
+                        fontSize = 26.sp,
+                        style = TextStyle(fontWeight = W700)
                     )
                 }
 
@@ -67,7 +72,8 @@ public fun kpiVentas(){
                     text = "$157.2536",
                     color = Color(0xFF304891),
                     modifier = Modifier.padding(10.dp),
-                    fontSize = 32.sp
+                    fontSize = 32.sp,
+                    style = TextStyle(fontWeight = FontWeight.Medium)
                 )
             }
             Row(
@@ -79,11 +85,13 @@ public fun kpiVentas(){
                     text = "Cantidad de TKT: ",
                     color = Color(0xFFF37920),
                     fontSize = 14.sp,
+                    style = TextStyle(fontWeight = FontWeight.Medium)
                 )
                 Text(
                     text = "7",
                     color = Color(0xFF7A7A7A),
-                    fontSize = 14.sp
+                    fontSize = 14.sp,
+                    style = TextStyle(fontWeight = FontWeight.Medium)
                 )
             }
             Row (
@@ -95,11 +103,14 @@ public fun kpiVentas(){
                     text = "Promedio de ventas: ",
                     color = Color(0xFFF37920),
                     fontSize = 14.sp,
+                    style = TextStyle(fontWeight = FontWeight.Medium)
                 )
                 Text(
                     text = "$25.156",
                     color = Color(0xFF7A7A7A),
-                    fontSize = 14.sp
+                    fontSize = 14.sp,
+                    style = TextStyle(fontWeight = FontWeight.Medium)
+
                 )
             }
 
