@@ -45,6 +45,7 @@ class MainActivity : ComponentActivity() {
                     LazyColumn(modifier = Modifier
                         .fillMaxSize()
                         .padding(innerPadding)) {
+                        item { kpiVentas() }
                         item {EChartView("file:///android_asset/echarts.html") }
                         item {EChartView("file:///android_asset/area-pieces.html") }
                         item {EChartView("file:///android_asset/torta-lineas.html") }
@@ -144,5 +145,11 @@ fun DefaultPreview() {
     ApacheEChartsExampleTheme {
         EChartView("file:///android_asset/area-pieces.html")
     }
+}
+
+@Preview
+@Composable
+private fun () {
+    
 }
 
